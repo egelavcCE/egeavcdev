@@ -585,4 +585,9 @@
   .experience-description li {
     font-size: 0.9rem;
   }
+
+  /* Hide "deneyimlerim" text in mobile view */
+  .about-subtitle {
+    display: none;
+  }
 }
