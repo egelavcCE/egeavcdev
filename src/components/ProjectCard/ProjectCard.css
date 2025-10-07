@@ -1,0 +1,426 @@
+.project-card {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: attr(data-color);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+/* Individual project color styles */
+.project-card[data-color="#3498db"]::before { background: #3498db; }
+.project-card[data-color="#e74c3c"]::before { background: #e74c3c; }
+.project-card[data-color="#2ecc71"]::before { background: #2ecc71; }
+.project-card[data-color="#f39c12"]::before { background: #f39c12; }
+.project-card[data-color="#9b59b6"]::before { background: #9b59b6; }
+.project-card[data-color="#34495e"]::before { background: #34495e; }
+.project-card[data-color="#1abc9c"]::before { background: #1abc9c; }
+.project-card[data-color="#e67e22"]::before { background: #e67e22; }
+.project-card[data-color="#16a085"]::before { background: #16a085; }
+.project-card[data-color="#8e44ad"]::before { background: #8e44ad; }
+.project-card[data-color="#27ae60"]::before { background: #27ae60; }
+.project-card[data-color="#c0392b"]::before { background: #c0392b; }
+.project-card[data-color="#2980b9"]::before { background: #2980b9; }
+.project-card[data-color="#d35400"]::before { background: #d35400; }
+.project-card[data-color="#7f8c8d"]::before { background: #7f8c8d; }
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.project-card:hover::before {
+  transform: scaleX(1);
+}
+
+.project-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.project-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin: 0;
+  flex: 1;
+}
+
+.project-color-indicator {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Individual project color indicators */
+.project-card[data-color="#3498db"] .project-color-indicator { background-color: #3498db; }
+.project-card[data-color="#e74c3c"] .project-color-indicator { background-color: #e74c3c; }
+.project-card[data-color="#2ecc71"] .project-color-indicator { background-color: #2ecc71; }
+.project-card[data-color="#f39c12"] .project-color-indicator { background-color: #f39c12; }
+.project-card[data-color="#9b59b6"] .project-color-indicator { background-color: #9b59b6; }
+.project-card[data-color="#34495e"] .project-color-indicator { background-color: #34495e; }
+.project-card[data-color="#1abc9c"] .project-color-indicator { background-color: #1abc9c; }
+.project-card[data-color="#e67e22"] .project-color-indicator { background-color: #e67e22; }
+.project-card[data-color="#16a085"] .project-color-indicator { background-color: #16a085; }
+.project-card[data-color="#8e44ad"] .project-color-indicator { background-color: #8e44ad; }
+.project-card[data-color="#27ae60"] .project-color-indicator { background-color: #27ae60; }
+.project-card[data-color="#c0392b"] .project-color-indicator { background-color: #c0392b; }
+.project-card[data-color="#2980b9"] .project-color-indicator { background-color: #2980b9; }
+.project-card[data-color="#d35400"] .project-color-indicator { background-color: #d35400; }
+.project-card[data-color="#7f8c8d"] .project-color-indicator { background-color: #7f8c8d; }
+
+.project-description {
+  color: #495057;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+  flex: 1;
+}
+
+.project-technologies {
+  margin-bottom: 1.5rem;
+}
+
+.technologies-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #6c757d;
+  display: block;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tech-tag {
+  padding: 0.375rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+/* Individual project tech tag styles */
+.project-card[data-color="#3498db"] .tech-tag { 
+  background: linear-gradient(135deg, #3498db20 0%, #3498db10 100%);
+  color: #3498db;
+  border: 1px solid #3498db;
+}
+.project-card[data-color="#e74c3c"] .tech-tag { 
+  background: linear-gradient(135deg, #e74c3c20 0%, #e74c3c10 100%);
+  color: #e74c3c;
+  border: 1px solid #e74c3c;
+}
+.project-card[data-color="#2ecc71"] .tech-tag { 
+  background: linear-gradient(135deg, #2ecc7120 0%, #2ecc7110 100%);
+  color: #2ecc71;
+  border: 1px solid #2ecc71;
+}
+.project-card[data-color="#f39c12"] .tech-tag { 
+  background: linear-gradient(135deg, #f39c1220 0%, #f39c1210 100%);
+  color: #f39c12;
+  border: 1px solid #f39c12;
+}
+.project-card[data-color="#9b59b6"] .tech-tag { 
+  background: linear-gradient(135deg, #9b59b620 0%, #9b59b610 100%);
+  color: #9b59b6;
+  border: 1px solid #9b59b6;
+}
+.project-card[data-color="#34495e"] .tech-tag { 
+  background: linear-gradient(135deg, #34495e20 0%, #34495e10 100%);
+  color: #34495e;
+  border: 1px solid #34495e;
+}
+.project-card[data-color="#1abc9c"] .tech-tag { 
+  background: linear-gradient(135deg, #1abc9c20 0%, #1abc9c10 100%);
+  color: #1abc9c;
+  border: 1px solid #1abc9c;
+}
+.project-card[data-color="#e67e22"] .tech-tag { 
+  background: linear-gradient(135deg, #e67e2220 0%, #e67e2210 100%);
+  color: #e67e22;
+  border: 1px solid #e67e22;
+}
+.project-card[data-color="#16a085"] .tech-tag { 
+  background: linear-gradient(135deg, #16a08520 0%, #16a08510 100%);
+  color: #16a085;
+  border: 1px solid #16a085;
+}
+.project-card[data-color="#8e44ad"] .tech-tag { 
+  background: linear-gradient(135deg, #8e44ad20 0%, #8e44ad10 100%);
+  color: #8e44ad;
+  border: 1px solid #8e44ad;
+}
+.project-card[data-color="#27ae60"] .tech-tag { 
+  background: linear-gradient(135deg, #27ae6020 0%, #27ae6010 100%);
+  color: #27ae60;
+  border: 1px solid #27ae60;
+}
+.project-card[data-color="#c0392b"] .tech-tag { 
+  background: linear-gradient(135deg, #c0392b20 0%, #c0392b10 100%);
+  color: #c0392b;
+  border: 1px solid #c0392b;
+}
+.project-card[data-color="#2980b9"] .tech-tag { 
+  background: linear-gradient(135deg, #2980b920 0%, #2980b910 100%);
+  color: #2980b9;
+  border: 1px solid #2980b9;
+}
+.project-card[data-color="#d35400"] .tech-tag { 
+  background: linear-gradient(135deg, #d3540020 0%, #d3540010 100%);
+  color: #d35400;
+  border: 1px solid #d35400;
+}
+.project-card[data-color="#7f8c8d"] .tech-tag { 
+  background: linear-gradient(135deg, #7f8c8d20 0%, #7f8c8d10 100%);
+  color: #7f8c8d;
+  border: 1px solid #7f8c8d;
+}
+
+.tech-tag:hover {
+  color: white;
+  transform: translateY(-1px);
+}
+
+/* Individual project tech tag hover styles */
+.project-card[data-color="#3498db"] .tech-tag:hover { background: #3498db; }
+.project-card[data-color="#e74c3c"] .tech-tag:hover { background: #e74c3c; }
+.project-card[data-color="#2ecc71"] .tech-tag:hover { background: #2ecc71; }
+.project-card[data-color="#f39c12"] .tech-tag:hover { background: #f39c12; }
+.project-card[data-color="#9b59b6"] .tech-tag:hover { background: #9b59b6; }
+.project-card[data-color="#34495e"] .tech-tag:hover { background: #34495e; }
+.project-card[data-color="#1abc9c"] .tech-tag:hover { background: #1abc9c; }
+.project-card[data-color="#e67e22"] .tech-tag:hover { background: #e67e22; }
+.project-card[data-color="#16a085"] .tech-tag:hover { background: #16a085; }
+.project-card[data-color="#8e44ad"] .tech-tag:hover { background: #8e44ad; }
+.project-card[data-color="#27ae60"] .tech-tag:hover { background: #27ae60; }
+.project-card[data-color="#c0392b"] .tech-tag:hover { background: #c0392b; }
+.project-card[data-color="#2980b9"] .tech-tag:hover { background: #2980b9; }
+.project-card[data-color="#d35400"] .tech-tag:hover { background: #d35400; }
+.project-card[data-color="#7f8c8d"] .tech-tag:hover { background: #7f8c8d; }
+
+.project-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: auto;
+}
+
+.website-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(52, 152, 219, 0.3);
+}
+
+.website-link:hover {
+  background: linear-gradient(135deg, #2980b9 0%, #1f4e79 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(52, 152, 219, 0.4);
+  text-decoration: none;
+  color: white;
+}
+
+.website-link svg {
+  transition: transform 0.3s ease;
+}
+
+.website-link:hover svg {
+  transform: scale(1.1);
+}
+
+/* Dark theme support */
+[data-theme="dark"] .project-card {
+  background: rgba(44, 62, 80, 0.9);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: #ecf0f1;
+}
+
+[data-theme="dark"] .project-card:hover {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] .project-name {
+  color: #ecf0f1;
+}
+
+[data-theme="dark"] .project-description {
+  color: #bdc3c7;
+}
+
+[data-theme="dark"] .technologies-label {
+  color: #95a5a6;
+}
+
+/* Dark theme tech tag styles */
+[data-theme="dark"] .project-card[data-color="#3498db"] .tech-tag { 
+  background: linear-gradient(135deg, #3498db30 0%, #3498db20 100%);
+  border-color: #3498db;
+}
+[data-theme="dark"] .project-card[data-color="#e74c3c"] .tech-tag { 
+  background: linear-gradient(135deg, #e74c3c30 0%, #e74c3c20 100%);
+  border-color: #e74c3c;
+}
+[data-theme="dark"] .project-card[data-color="#2ecc71"] .tech-tag { 
+  background: linear-gradient(135deg, #2ecc7130 0%, #2ecc7120 100%);
+  border-color: #2ecc71;
+}
+[data-theme="dark"] .project-card[data-color="#f39c12"] .tech-tag { 
+  background: linear-gradient(135deg, #f39c1230 0%, #f39c1220 100%);
+  border-color: #f39c12;
+}
+[data-theme="dark"] .project-card[data-color="#9b59b6"] .tech-tag { 
+  background: linear-gradient(135deg, #9b59b630 0%, #9b59b620 100%);
+  border-color: #9b59b6;
+}
+[data-theme="dark"] .project-card[data-color="#34495e"] .tech-tag { 
+  background: linear-gradient(135deg, #34495e30 0%, #34495e20 100%);
+  border-color: #34495e;
+}
+[data-theme="dark"] .project-card[data-color="#1abc9c"] .tech-tag { 
+  background: linear-gradient(135deg, #1abc9c30 0%, #1abc9c20 100%);
+  border-color: #1abc9c;
+}
+[data-theme="dark"] .project-card[data-color="#e67e22"] .tech-tag { 
+  background: linear-gradient(135deg, #e67e2230 0%, #e67e2220 100%);
+  border-color: #e67e22;
+}
+[data-theme="dark"] .project-card[data-color="#16a085"] .tech-tag { 
+  background: linear-gradient(135deg, #16a08530 0%, #16a08520 100%);
+  border-color: #16a085;
+}
+[data-theme="dark"] .project-card[data-color="#8e44ad"] .tech-tag { 
+  background: linear-gradient(135deg, #8e44ad30 0%, #8e44ad20 100%);
+  border-color: #8e44ad;
+}
+[data-theme="dark"] .project-card[data-color="#27ae60"] .tech-tag { 
+  background: linear-gradient(135deg, #27ae6030 0%, #27ae6020 100%);
+  border-color: #27ae60;
+}
+[data-theme="dark"] .project-card[data-color="#c0392b"] .tech-tag { 
+  background: linear-gradient(135deg, #c0392b30 0%, #c0392b20 100%);
+  border-color: #c0392b;
+}
+[data-theme="dark"] .project-card[data-color="#2980b9"] .tech-tag { 
+  background: linear-gradient(135deg, #2980b930 0%, #2980b920 100%);
+  border-color: #2980b9;
+}
+[data-theme="dark"] .project-card[data-color="#d35400"] .tech-tag { 
+  background: linear-gradient(135deg, #d3540030 0%, #d3540020 100%);
+  border-color: #d35400;
+}
+[data-theme="dark"] .project-card[data-color="#7f8c8d"] .tech-tag { 
+  background: linear-gradient(135deg, #7f8c8d30 0%, #7f8c8d20 100%);
+  border-color: #7f8c8d;
+}
+
+[data-theme="dark"] .project-card[data-color="#3498db"] .tech-tag:hover { background: #3498db; color: white; }
+[data-theme="dark"] .project-card[data-color="#e74c3c"] .tech-tag:hover { background: #e74c3c; color: white; }
+[data-theme="dark"] .project-card[data-color="#2ecc71"] .tech-tag:hover { background: #2ecc71; color: white; }
+[data-theme="dark"] .project-card[data-color="#f39c12"] .tech-tag:hover { background: #f39c12; color: white; }
+[data-theme="dark"] .project-card[data-color="#9b59b6"] .tech-tag:hover { background: #9b59b6; color: white; }
+[data-theme="dark"] .project-card[data-color="#34495e"] .tech-tag:hover { background: #34495e; color: white; }
+[data-theme="dark"] .project-card[data-color="#1abc9c"] .tech-tag:hover { background: #1abc9c; color: white; }
+[data-theme="dark"] .project-card[data-color="#e67e22"] .tech-tag:hover { background: #e67e22; color: white; }
+[data-theme="dark"] .project-card[data-color="#16a085"] .tech-tag:hover { background: #16a085; color: white; }
+[data-theme="dark"] .project-card[data-color="#8e44ad"] .tech-tag:hover { background: #8e44ad; color: white; }
+[data-theme="dark"] .project-card[data-color="#27ae60"] .tech-tag:hover { background: #27ae60; color: white; }
+[data-theme="dark"] .project-card[data-color="#c0392b"] .tech-tag:hover { background: #c0392b; color: white; }
+[data-theme="dark"] .project-card[data-color="#2980b9"] .tech-tag:hover { background: #2980b9; color: white; }
+[data-theme="dark"] .project-card[data-color="#d35400"] .tech-tag:hover { background: #d35400; color: white; }
+[data-theme="dark"] .project-card[data-color="#7f8c8d"] .tech-tag:hover { background: #7f8c8d; color: white; }
+
+[data-theme="dark"] .website-link {
+  background: linear-gradient(135deg, #2980b9 0%, #1f4e79 100%);
+}
+
+[data-theme="dark"] .website-link:hover {
+  background: linear-gradient(135deg, #1f4e79 0%, #0f2f4a 100%);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .project-card {
+    padding: 1.5rem;
+  }
+  
+  .project-name {
+    font-size: 1.25rem;
+  }
+  
+  .project-card-header {
+    margin-bottom: 1rem;
+  }
+  
+  .project-description {
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .tech-tags {
+    gap: 0.375rem;
+  }
+  
+  .tech-tag {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-card {
+    padding: 1.25rem;
+  }
+  
+  .project-name {
+    font-size: 1.1rem;
+  }
+  
+  .project-card-header {
+    gap: 0.75rem;
+  }
+  
+  .tech-tags {
+    gap: 0.25rem;
+  }
+  
+  .tech-tag {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.4rem;
+  }
+}

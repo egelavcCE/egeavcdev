@@ -1,0 +1,136 @@
+.homepage {
+  min-height: 100vh;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+}
+
+.homepage-main {
+  padding-top: 120px; /* Header height compensation */
+  display: flex;
+  flex-direction: column;
+}
+
+
+.cards-section {
+  padding: 4rem 0;
+  background: var(--bg-primary);
+  position: relative;
+  min-height: calc(100vh - 120px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+.cards-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(139, 69, 19, 0.3), transparent);
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  max-width: 1400px;
+  width: 100%;
+  padding: 0 2rem;
+  align-items: start;
+}
+
+/* Dark theme support for cards section */
+[data-theme="dark"] .cards-section {
+  background: var(--bg-primary);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .cards-container {
+    gap: 1.2rem;
+    padding: 0 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .cards-section {
+    padding: 2rem 0;
+  }
+  
+  .cards-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .cards-section {
+    padding: 1.5rem 0;
+  }
+  
+  .cards-container {
+    gap: 1rem;
+    padding: 0 0.5rem;
+  }
+}
+
+/* Services Section Styles */
+.services-section {
+  padding: 4rem 0;
+  background: var(--bg-primary);
+  position: relative;
+}
+
+.services-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(139, 69, 19, 0.3), transparent);
+}
+
+.services-container {
+  max-width: 1400px;
+  width: 100%;
+  padding: 0 2rem;
+  margin: 0 auto;
+}
+
+/* Dark theme support for services section */
+[data-theme="dark"] .services-section {
+  background: var(--bg-primary);
+}
+
+/* Responsive Design for Services */
+@media (max-width: 1200px) {
+  .services-container {
+    padding: 0 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .services-section {
+    padding: 3rem 0;
+  }
+  
+  .services-container {
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .services-section {
+    padding: 2rem 0;
+  }
+  
+  .services-container {
+    padding: 0 0.5rem;
+  }
+}

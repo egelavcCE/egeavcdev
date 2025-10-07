@@ -1,0 +1,160 @@
+.image-card {
+  max-width: 600px;
+  margin: 2rem auto;
+}
+
+.image-card-content {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 20px;
+  padding: 0;
+  box-shadow: 
+    0 10px 30px rgba(0, 0, 0, 0.1),
+    0 1px 8px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.image-card-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #8B4513, #D2B48C, #F5DEB3);
+  border-radius: 20px 20px 0 0;
+  z-index: 2;
+}
+
+.image-card-content:hover {
+  transform: translateY(-5px);
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.15),
+    0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 16px 16px 0 0;
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.3s ease;
+}
+
+.image-container:hover .card-image {
+  transform: scale(1.05);
+}
+
+
+.slogan-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  max-width: 450px;
+  margin: 1.5rem auto 0;
+  text-align: center;
+}
+
+.slogan-icon {
+  font-size: 2rem;
+  animation: sparkle 2s ease-in-out infinite;
+}
+
+@keyframes sparkle {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  50% { transform: scale(1.1) rotate(10deg); }
+}
+
+.slogan-text {
+  font-family: 'Playfair Display', 'Times New Roman', serif;
+  font-size: 1.5rem;
+  color: #495057;
+  line-height: 1.6;
+  margin: 0;
+  text-align: center;
+  font-style: italic;
+  letter-spacing: 0.5px;
+  background: linear-gradient(135deg, #8B4513, #A0522D);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Dark theme support */
+[data-theme="dark"] .image-card-content {
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .slogan-text {
+  background: linear-gradient(135deg, #D2B48C, #F5DEB3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .image-card {
+    margin: 1rem auto;
+    padding: 0 0.5rem;
+  }
+  
+  .image-container {
+    height: 200px;
+  }
+  
+  .overlay-title {
+    font-size: 1.2rem;
+  }
+  
+  .overlay-text {
+    font-size: 0.9rem;
+  }
+  
+  .slogan-text {
+    font-size: 1rem;
+  }
+  
+  .slogan-container {
+    margin: 1rem auto 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .image-container {
+    height: 180px;
+  }
+  
+  .overlay-icon {
+    font-size: 2rem;
+  }
+  
+  .overlay-title {
+    font-size: 1rem;
+  }
+  
+  .slogan-text {
+    font-size: 0.9rem;
+  }
+  
+  .slogan-icon {
+    font-size: 1.5rem;
+  }
+  
+  .slogan-container {
+    margin: 1rem auto 0;
+  }
+}
