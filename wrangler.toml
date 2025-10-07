@@ -7,7 +7,7 @@ name = "egedev-portfolio"
 # Pages configuration
 [pages]
 # Specify the output directory for your build
-output_dir = "dist"
+output_dir = "build"
 
 # Build configuration
 [build]

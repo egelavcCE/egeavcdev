@@ -13,8 +13,8 @@
     "type-check": "tsc --noEmit",
     "deploy": "powershell -ExecutionPolicy Bypass -File deploy.ps1",
     "deploy:win": "deploy.bat",
-    "deploy:cloudflare": "npm run build && npx wrangler pages deploy dist",
-    "preview": "npx serve dist"
+    "deploy:cloudflare": "npm run build && npx wrangler pages deploy build",
+    "preview": "npx serve build"
   },
   "keywords": [
     "react",
