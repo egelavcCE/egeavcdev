@@ -1,5 +1,6 @@
 # Deployment Script for React TypeScript Project
 # This script builds and prepares the project for deployment
+# Compatible with Cloudflare Pages, Netlify, Vercel, and other platforms
 
 Write-Host "🚀 Starting deployment process..." -ForegroundColor Green
 

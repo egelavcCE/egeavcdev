@@ -51,7 +51,15 @@ firebase init hosting
 firebase deploy
 ```
 
-### 5. Heroku
+### 5. Cloudflare Pages
+1. Cloudflare Pages'e giriş yapın
+2. "Create a project" seçin
+3. Repository'nizi bağlayın
+4. Build command: `npm run build`
+5. Build output directory: `dist`
+6. Veya CLI ile: `npm run deploy:cloudflare`
+
+### 6. Heroku
 1. `package.json`'a ekleyin:
 ```json
 "scripts": {
